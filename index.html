@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5BADE0">
   <title>장혜경 | 모바일 명함</title>
   <style>
     @font-face {
@@ -11,12 +12,11 @@
     }
 
     :root {
-      --sky: #5BA8D8;
-      --sky-light: #DCECF8;
-      --navy: #003876;
-      --text: #183B59;
-      --muted: #607B91;
-      --pale: #F1F7FC;
+      --sky: #65B8E8;
+      --blue: #1766A8;
+      --navy: #084B83;
+      --pale: #EAF6FD;
+      --text: #244B68;
     }
 
     * {
@@ -27,193 +27,203 @@
 
     body {
       font-family: "한진체", "Malgun Gothic", sans-serif;
-      background: #E7F0F8;
+      background: linear-gradient(180deg, #D8F0FF, #F4FAFF);
       color: var(--text);
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 22px;
+      padding: 20px 14px;
     }
 
     .card {
       width: 100%;
-      max-width: 420px;
-      background: #FFFFFF;
-      border-radius: 26px;
+      max-width: 440px;
+      background: #fff;
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 18px 50px rgba(0, 56, 118, 0.15);
+      box-shadow: 0 15px 45px #1766A822;
     }
 
     .header {
-      position: relative;
-      overflow: hidden;
-      padding: 42px 28px 40px;
-      background: linear-gradient(145deg, #003876, #07569A);
-      color: #FFFFFF;
-    }
-
-    .header::after {
-      content: "";
-      position: absolute;
-      width: 190px;
-      height: 190px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 50%;
-      right: -80px;
-      top: -70px;
-      box-shadow: 0 0 0 25px rgba(255, 255, 255, 0.04),
-                  0 0 0 50px rgba(255, 255, 255, 0.03);
+      padding: 32px 24px 30px;
+      background: linear-gradient(145deg, #55AFE4, #C4E9FC);
     }
 
     .brand {
-      position: relative;
-      z-index: 1;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: bold;
       letter-spacing: 2px;
-      color: #C4E5FA;
-      margin-bottom: 27px;
+      color: #15578D;
+      margin-bottom: 24px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .profile-text {
+      flex: 1;
+      min-width: 0;
     }
 
     h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 44px;
+      font-size: clamp(34px, 9vw, 43px);
+      color: #064B83;
+      margin-bottom: 10px;
       letter-spacing: -1px;
-      margin-bottom: 18px;
-      color: #FFFFFF;
+    }
+
+    .job-title {
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 1.7;
+      color: #174F78;
+      margin-bottom: 14px;
+      word-break: keep-all;
     }
 
     .intro {
-      position: relative;
-      z-index: 1;
-      font-size: 18px;
-      line-height: 1.9;
-      color: #E5F3FF;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #174F78;
       word-break: keep-all;
     }
 
-    .intro strong {
-      color: #FFFFFF;
-      font-weight: 800;
+    .portrait {
+      width: 42%;
+      max-width: 158px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid white;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 5px 18px #064B8320;
     }
 
     .content {
-      padding: 32px 24px 28px;
+      padding: 28px 20px 24px;
     }
 
-    .section-title {
-      font-size: 25px;
+    .section-heading {
+      font-size: 27px;
       color: var(--navy);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .section-intro {
-      font-size: 16px;
+      font-size: 15px;
+      color: #64839A;
       line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 22px;
-      word-break: keep-all;
+      margin-bottom: 20px;
     }
 
     .work-list {
       display: grid;
-      gap: 14px;
+      gap: 13px;
     }
 
     .work {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 15px;
-      padding: 18px 16px;
-      background: var(--pale);
-      border: 1px solid #DFEAF4;
+      padding: 16px 14px;
       border-radius: 17px;
+      background: var(--pale);
+      border: 1px solid #DCEFFA;
     }
 
     .icon {
-      width: 50px;
-      height: 50px;
+      width: 54px;
+      height: 54px;
       flex-shrink: 0;
       display: grid;
       place-items: center;
-      border-radius: 14px;
-      background: var(--sky-light);
-      font-size: 26px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #65B8E8, #328FD0);
+      color: white;
+      font-size: 27px;
     }
 
     .work h3 {
       font-size: 20px;
       color: var(--navy);
-      margin: 3px 0 7px;
+      margin-bottom: 6px;
     }
 
     .work p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      color: #4D718B;
       word-break: keep-all;
     }
 
     .message {
-      margin-top: 24px;
-      padding: 20px 18px;
-      border-left: 4px solid var(--sky);
-      background: #F4F8FC;
-      border-radius: 0 14px 14px 0;
-      font-size: 16px;
+      margin: 22px 0;
+      padding: 17px 12px;
+      text-align: center;
+      border-top: 1px solid #D9ECF8;
+      border-bottom: 1px solid #D9ECF8;
+      color: var(--blue);
+      font-size: 17px;
+      font-weight: bold;
       line-height: 1.9;
-      color: #36566F;
       word-break: keep-all;
     }
 
     .footer {
-      padding: 0 24px 30px;
+      padding: 0 20px 28px;
     }
 
     .contact {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 100%;
-      min-height: 62px;
-      border-radius: 15px;
-      background: var(--navy);
-      color: #FFFFFF;
-      font-size: 21px;
+      min-height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      border-radius: 40px;
+      background: linear-gradient(100deg, #287FC0, #07549A);
+      color: white;
+      font-family: inherit;
+      font-size: 22px;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .contact:hover {
-      background: #07569A;
+      box-shadow: 0 7px 18px #1766A82B;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     .contact:active {
       transform: scale(0.98);
+      opacity: 0.9;
     }
 
     .email {
       text-align: center;
+      font-size: 12px;
+      color: #69869B;
       margin-top: 13px;
-      font-size: 13px;
-      color: var(--muted);
     }
 
     .signature {
       text-align: center;
-      margin-top: 22px;
-      font-size: 13px;
-      color: #8298AA;
-      letter-spacing: 1px;
+      color: #1766A8;
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-top: 23px;
     }
 
     @media (max-width: 360px) {
-      h1 { font-size: 38px; }
-      .header { padding: 34px 22px; }
-      .content { padding: 28px 18px; }
-      .footer { padding: 0 18px 24px; }
+      .header { padding: 27px 17px; }
+      .profile { gap: 10px; }
+      .portrait { width: 39%; }
+      .intro { font-size: 14px; }
+      .job-title { font-size: 13px; }
+      .content { padding: 25px 15px; }
+      .work { gap: 11px; padding: 14px 11px; }
+      .work p { font-size: 13px; }
     }
   </style>
 </head>
@@ -221,61 +231,72 @@
   <main class="card">
     <header class="header">
       <p class="brand">ASIANA AIRLINES</p>
-      <h1>장혜경</h1>
-      <p class="intro">
-        아시아나항공 객실훈련팀 강사<br>
-        <strong>진심을 담아 가르치고,<br>
-        함께 성장하는 사람</strong>입니다.
-      </p>
+      <div class="profile">
+        <div class="profile-text">
+          <h1>장혜경</h1>
+          <p class="job-title">아시아나항공 객실훈련팀 강사</p>
+          <p class="intro">
+            사람과 사람을 잇는<br>
+            진심의 서비스,<br>
+            함께 만들어갑니다.
+          </p>
+        </div>
+        <img
+          class="portrait"
+          src="profile.jpg"
+          alt="장혜경 프로필 일러스트"
+        >
+      </div>
     </header>
 
     <section class="content">
-      <h2 class="section-title">제가 하는 일</h2>
+      <h2 class="section-heading">제가 하는 일</h2>
       <p class="section-intro">
-        작은 배움이 현장의 자신감이 되고,<br>
-        그 자신감이 더 나은 서비스로 이어지도록.
+        더 좋은 서비스를 위해<br>
+        오늘도 배우고 함께 성장합니다.
       </p>
 
       <div class="work-list">
         <article class="work">
-          <div class="icon">✈️</div>
+          <div class="icon" aria-hidden="true">✈</div>
           <div>
             <h3>승무원</h3>
-            <p>안전과 배려를 바탕으로 고객 한 분 한 분에게 신뢰와 편안함을 전합니다.</p>
+            <p>안전과 배려로, 고객에게 편안함을 전합니다.</p>
           </div>
         </article>
 
         <article class="work">
-          <div class="icon">🤝</div>
+          <div class="icon" aria-hidden="true">♧</div>
           <div>
             <h3>서비스강사</h3>
-            <p>정답을 알려주는 데 그치지 않고, 각자의 진심이 좋은 서비스로 표현될 수 있도록 함께 고민합니다.</p>
+            <p>좋은 서비스가 일상이 되도록 함께합니다.</p>
           </div>
         </article>
 
         <article class="work">
-          <div class="icon">🎙️</div>
+          <div class="icon" aria-hidden="true">🎙</div>
           <div>
             <h3>방송강사</h3>
-            <p>정확한 전달을 넘어, 목소리에 신뢰와 배려를 담아 승객에게 편안하게 다가가는 방송을 교육합니다.</p>
+            <p>정확하고 따뜻한 목소리로 마음을 전합니다.</p>
           </div>
         </article>
       </div>
 
       <div class="message">
-        누군가의 작은 변화와 성장이<br>
-        현장의 더 큰 자신감으로 이어지는 순간을 소중히 생각합니다.<br>
-        오늘도 진심을 다해 배우고, 나누고, 함께 성장하겠습니다.
+        작은 변화가 더 큰 성장으로 이어지도록,<br>
+        늘 진심을 다하겠습니다.
       </div>
     </section>
 
     <footer class="footer">
-      <a class="contact"
-         href="mailto:hkjang105d@flyasiana.com?subject=%EC%9E%A5%ED%98%9C%EA%B2%BD%20%EA%B0%95%EC%82%AC%20%EB%AC%B8%EC%9D%98">
-        문의하기 ✉
+      <a
+        class="contact"
+        href="mailto:hkjang105d@flyasiana.com?subject=%EC%9E%A5%ED%98%9C%EA%B2%BD%20%EA%B0%95%EC%82%AC%20%EB%AC%B8%EC%9D%98"
+      >
+        ✉ &nbsp; 문의하기 &nbsp; →
       </a>
       <p class="email">hkjang105d@flyasiana.com</p>
-      <p class="signature">진심을 전하고, 가치를 더하다.</p>
+      <p class="signature">SINCERITY · SERVICE · GROWTH</p>
     </footer>
   </main>
 </body>

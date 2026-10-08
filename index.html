@@ -114,6 +114,9 @@
     }
 
     .contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       min-height: 62px;
       border: none;
@@ -123,6 +126,7 @@
       font-family: inherit;
       font-size: 22px;
       font-weight: bold;
+      text-decoration: none;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -189,16 +193,12 @@
     </section>
 
     <footer class="footer">
-      <button class="contact" id="contactBtn">문의하기 ✉</button>
+      <a
+        class="contact"
+        href="mailto:hkjang105d@flyasiana.com?subject=%EC%9E%A5%ED%98%9C%EA%B2%BD%20%EA%B0%95%EC%82%AC%20%EB%AC%B8%EC%9D%98"
+      >문의하기 ✉</a>
       <p class="signature">AVIATION · SERVICE · COMMUNICATION</p>
     </footer>
   </main>
-
-  <script>
-    document.getElementById("contactBtn").addEventListener("click", function () {
-      window.location.href =
-        "mailto:?subject=" + encodeURIComponent("장혜경 강사 문의");
-    });
-  </script>
 </body>
 </html>

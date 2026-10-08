@@ -10,6 +10,15 @@
       src: local("한진체"), local("HanJin");
     }
 
+    :root {
+      --sky: #5BA8D8;
+      --sky-light: #DCECF8;
+      --navy: #003876;
+      --text: #183B59;
+      --muted: #607B91;
+      --pale: #F1F7FC;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,8 +27,8 @@
 
     body {
       font-family: "한진체", "Malgun Gothic", sans-serif;
-      background: #eaf8ff;
-      color: #24475b;
+      background: #E7F0F8;
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -30,45 +39,81 @@
     .card {
       width: 100%;
       max-width: 420px;
-      background: #fff;
-      border-radius: 30px;
+      background: #FFFFFF;
+      border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 18px 50px rgba(75, 170, 210, 0.2);
+      box-shadow: 0 18px 50px rgba(0, 56, 118, 0.15);
     }
 
     .header {
-      padding: 42px 28px;
-      background: linear-gradient(145deg, #87ceeb, #c4efff);
+      position: relative;
+      overflow: hidden;
+      padding: 42px 28px 40px;
+      background: linear-gradient(145deg, #003876, #07569A);
+      color: #FFFFFF;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      right: -80px;
+      top: -70px;
+      box-shadow: 0 0 0 25px rgba(255, 255, 255, 0.04),
+                  0 0 0 50px rgba(255, 255, 255, 0.03);
     }
 
     .brand {
-      font-size: 15px;
-      font-weight: bold;
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
       letter-spacing: 2px;
-      margin-bottom: 25px;
-      color: #245b78;
+      color: #C4E5FA;
+      margin-bottom: 27px;
     }
 
     h1 {
+      position: relative;
+      z-index: 1;
       font-size: 44px;
       letter-spacing: -1px;
-      margin-bottom: 15px;
-      color: #173d52;
+      margin-bottom: 18px;
+      color: #FFFFFF;
     }
 
     .intro {
+      position: relative;
+      z-index: 1;
       font-size: 18px;
-      line-height: 1.8;
+      line-height: 1.9;
+      color: #E5F3FF;
       word-break: keep-all;
     }
 
+    .intro strong {
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+
     .content {
-      padding: 32px 24px;
+      padding: 32px 24px 28px;
     }
 
     .section-title {
       font-size: 25px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--muted);
       margin-bottom: 22px;
+      word-break: keep-all;
     }
 
     .work-list {
@@ -78,34 +123,47 @@
 
     .work {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 18px;
-      background: #f1faff;
-      border: 1px solid #d9f1fc;
-      border-radius: 18px;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 18px 16px;
+      background: var(--pale);
+      border: 1px solid #DFEAF4;
+      border-radius: 17px;
     }
 
     .icon {
-      width: 54px;
-      height: 54px;
+      width: 50px;
+      height: 50px;
       flex-shrink: 0;
       display: grid;
       place-items: center;
-      border-radius: 16px;
-      background: #d8f2ff;
-      font-size: 28px;
+      border-radius: 14px;
+      background: var(--sky-light);
+      font-size: 26px;
     }
 
     .work h3 {
-      font-size: 21px;
-      margin-bottom: 6px;
+      font-size: 20px;
+      color: var(--navy);
+      margin: 3px 0 7px;
     }
 
     .work p {
       font-size: 15px;
-      line-height: 1.5;
-      color: #668292;
+      line-height: 1.75;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .message {
+      margin-top: 24px;
+      padding: 20px 18px;
+      border-left: 4px solid var(--sky);
+      background: #F4F8FC;
+      border-radius: 0 14px 14px 0;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #36566F;
       word-break: keep-all;
     }
 
@@ -119,27 +177,35 @@
       justify-content: center;
       width: 100%;
       min-height: 62px;
-      border: none;
-      border-radius: 18px;
-      background: #70c9eb;
-      color: #fff;
-      font-family: inherit;
-      font-size: 22px;
+      border-radius: 15px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-size: 21px;
       font-weight: bold;
       text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
 
     .contact:hover {
-      background: #48b4df;
+      background: #07569A;
+    }
+
+    .contact:active {
+      transform: scale(0.98);
+    }
+
+    .email {
+      text-align: center;
+      margin-top: 13px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
     .signature {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 22px;
       font-size: 13px;
-      color: #91a9b6;
+      color: #8298AA;
       letter-spacing: 1px;
     }
 
@@ -158,19 +224,24 @@
       <h1>장혜경</h1>
       <p class="intro">
         아시아나항공 객실훈련팀 강사<br>
-        더 나은 서비스와 소통을 위해<br>
-        함께 배우고 성장합니다.
+        <strong>진심을 담아 가르치고,<br>
+        함께 성장하는 사람</strong>입니다.
       </p>
     </header>
 
     <section class="content">
-      <h2 class="section-title">What I Do</h2>
+      <h2 class="section-title">제가 하는 일</h2>
+      <p class="section-intro">
+        작은 배움이 현장의 자신감이 되고,<br>
+        그 자신감이 더 나은 서비스로 이어지도록.
+      </p>
+
       <div class="work-list">
         <article class="work">
           <div class="icon">✈️</div>
           <div>
             <h3>승무원</h3>
-            <p>안전과 서비스의 가치를 실천합니다.</p>
+            <p>안전과 배려를 바탕으로 고객 한 분 한 분에게 신뢰와 편안함을 전합니다.</p>
           </div>
         </article>
 
@@ -178,7 +249,7 @@
           <div class="icon">🤝</div>
           <div>
             <h3>서비스강사</h3>
-            <p>고객 감동을 만드는 서비스 역량을 교육합니다.</p>
+            <p>정답을 알려주는 데 그치지 않고, 각자의 진심이 좋은 서비스로 표현될 수 있도록 함께 고민합니다.</p>
           </div>
         </article>
 
@@ -186,18 +257,25 @@
           <div class="icon">🎙️</div>
           <div>
             <h3>방송강사</h3>
-            <p>전달력 있는 목소리와 기내방송을 교육합니다.</p>
+            <p>정확한 전달을 넘어, 목소리에 신뢰와 배려를 담아 승객에게 편안하게 다가가는 방송을 교육합니다.</p>
           </div>
         </article>
+      </div>
+
+      <div class="message">
+        누군가의 작은 변화와 성장이<br>
+        현장의 더 큰 자신감으로 이어지는 순간을 소중히 생각합니다.<br>
+        오늘도 진심을 다해 배우고, 나누고, 함께 성장하겠습니다.
       </div>
     </section>
 
     <footer class="footer">
-      <a
-        class="contact"
-        href="mailto:hkjang105d@flyasiana.com?subject=%EC%9E%A5%ED%98%9C%EA%B2%BD%20%EA%B0%95%EC%82%AC%20%EB%AC%B8%EC%9D%98"
-      >문의하기 ✉</a>
-      <p class="signature">AVIATION · SERVICE · COMMUNICATION</p>
+      <a class="contact"
+         href="mailto:hkjang105d@flyasiana.com?subject=%EC%9E%A5%ED%98%9C%EA%B2%BD%20%EA%B0%95%EC%82%AC%20%EB%AC%B8%EC%9D%98">
+        문의하기 ✉
+      </a>
+      <p class="email">hkjang105d@flyasiana.com</p>
+      <p class="signature">진심을 전하고, 가치를 더하다.</p>
     </footer>
   </main>
 </body>
